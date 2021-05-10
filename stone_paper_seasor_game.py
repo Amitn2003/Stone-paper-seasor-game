@@ -11,11 +11,9 @@ raw = ["stone", "paper", "seasor"]
 usr_nm = input("Enter your name : ")
 # User will give his/her name here
 
-
 gus_lmt = 0
 # gus_lmt is the guess limit
 user_point = 0
-#pc_point = 0
 
 while gus_lmt<=9:# if guess limit will go more than 10 this loop will stop
 	r8_ans = random.choice(raw)
@@ -29,25 +27,14 @@ while gus_lmt<=9:# if guess limit will go more than 10 this loop will stop
 	#Guess time will increase +1 after every attempt
 	if ch==r8_ans :
 		user_point = user_point + 1
-		print("Match draw 😑😑")
-		# draw
-		
+		# win
+		print(f"{Fore.GREEN}You won this round 🥳🎉  \n"+'\033[39m'+f"You used {gus_lmt} guss limit. \nYou entered {ch} \nConputer answered {r8_ans} . \n Your score is {user_point} . \n ")
 		
 		continue
-	elif ch=="paper" and r8_ans=="stone" or ch=="stone" and r8_ans=="seasor" or ch=="seasor" and r8_ans=="paper":
-		
-		#win
-		print(f"{Fore.GREEN}You won this round 🥳🎉  \n"+'\033[39m'+f"You used {gus_lmt} guss limit. \nYou entered {ch} \nConputer answered {r8_ans} . \n Your score is {user_point} . \n ")
-		#pc_point = pc_point + 1
-		#
-	elif ch=="stone" and r8_ans=="paper" or ch=="paper" and r8_ans=="seasor" or ch=="seasor" and r8_ans=="stone":
-		#lose
-		print(f"{Fore.RED}You lost this round 😔😓. Hope you will win next round 🙏\n"+'\033[39m'+f"You used {gus_lmt} guss limit. \nYou entered {ch} \nConputer answered {r8_ans} . \n Your score is {user_point} . \n  ")
 	else:
-		print(f"Error!! Check your input. \nYou entered {choice}.")
+		#lose
 		
-		
-		
+		print(f"{Fore.RED}You lost this round 😔😓. Hope you will win next round 🙏\n"+'\033[39m'+f"You used {gus_lmt} guss limit. \nYou entered {ch} \nConputer answered {r8_ans} . \n Your score is {user_point} . \n  ")
 		
 		continue
 	continue
