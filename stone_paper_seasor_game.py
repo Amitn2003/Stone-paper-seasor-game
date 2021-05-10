@@ -29,14 +29,25 @@ while gus_lmt<=9:# if guess limit will go more than 10 this loop will stop
 	#Guess time will increase +1 after every attempt
 	if ch==r8_ans :
 		user_point = user_point + 1
-		# win
-		print(f"{Fore.GREEN}You won this round 🥳🎉  \n"+'\033[39m'+f"You used {gus_lmt} guss limit. \nYou entered {ch} \nConputer answered {r8_ans} . \n Your score is {user_point} . \n ")
+		print("Match draw 😑😑")
+		# draw
+		
 		
 		continue
-	else:
-		#lose
+	elif ch=="paper" and r8_ans=="stone" or ch=="stone" and r8_ans=="seasor" or ch=="seasor" and r8_ans=="paper":
+		
+		#win
+		print(f"{Fore.GREEN}You won this round 🥳🎉  \n"+'\033[39m'+f"You used {gus_lmt} guss limit. \nYou entered {ch} \nConputer answered {r8_ans} . \n Your score is {user_point} . \n ")
 		#pc_point = pc_point + 1
+		#
+	elif ch=="stone" and r8_ans=="paper" or ch=="paper" and r8_ans=="seasor" or ch=="seasor" and r8_ans=="stone":
+		#lose
 		print(f"{Fore.RED}You lost this round 😔😓. Hope you will win next round 🙏\n"+'\033[39m'+f"You used {gus_lmt} guss limit. \nYou entered {ch} \nConputer answered {r8_ans} . \n Your score is {user_point} . \n  ")
+	else:
+		print(f"Error!! Check your input. \nYou entered {choice}.")
+		
+		
+		
 		
 		continue
 	continue
@@ -51,7 +62,7 @@ elif user_point==5:
 elif user_point<5:
 	print("Better luck next time. 🙂 \n ")
 else:
-	print("Error!!")
+	print("Error!! \n")
 
 
 print(f"Thanks for playing {usr_nm.capitalize()}!")
@@ -62,4 +73,3 @@ player.write(f"Player name : {usr_nm.capitalize()}. Score : {user_point}. \n")
 player.close()
 
 exit()
-# usr_nm
